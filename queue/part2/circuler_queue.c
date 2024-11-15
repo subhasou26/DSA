@@ -4,7 +4,7 @@
 int arr[MAX];
 int rear=-1;
 int front=-1;
-void insert(int item);
+void insert(int item); // function declearaation
 int del();
 int peek();
 void display();
@@ -51,18 +51,20 @@ int main(){
 		} // end of while	
 	
 	}
-
+// function defination
     void insert(int item){
         if(isFull()){
             printf("Queue Overflow\n");
             return;
         }
-        if(front==-1)
+        if(front==-1) // if queue has no element
             front=0;
         if(rear==MAX-1)// rear is at last position
             rear=0;
-        else
+        else{
             rear++;
+        }
+            
             arr[rear]=item;    
     }// end of insert
 
@@ -89,15 +91,15 @@ int main(){
 
     int isEmpty(){
         if(front==-1){
-            return 1;
+            return 1; // empty
         }
         else
-            return 0;
+            return 0; // not empty
     }// end of isempty
 
     int isFull(){
         if((front==0 && rear==MAX-1)||(front==rear+1)){
-            return 1;
+            return 1; // the queue is full
         }
         else 
             return 0;
